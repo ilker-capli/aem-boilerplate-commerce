@@ -66,7 +66,7 @@ function renderPlaceholder(block) {
 }
 
 function renderItem(unitId, product) {
-  let image = product.images[0]?.url;
+  let image = product.images ? product.images[0]?.url: undefined;
   if (image) {
     image = image.replace('http://', '//');
   }
@@ -164,7 +164,7 @@ const mapProduct = (product, index) => ({
   visibility: undefined,
   categories: [],
   weight: 0,
-  image: product.images.length > 0 ? product.images[0].url : undefined,
+  image: product?.images && product?.images.length > 0 ? product?.images[0].url : undefined,
   url: new URL(rootLink(`/products/${product.urlKey}/${product.sku}`), window.location.origin).toString(),
   queryType: 'primary',
 });
