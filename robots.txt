@@ -5,4 +5,4 @@ Disallow: /enrichment/
 Disallow: /tools/
 Disallow: /plugins/experimentation/
 
-Sitemap: https://www.aemshop.net/sitemap-index.xml
+Sitemap: https://main--aem-boilerplate-commerce--ilker-capli.aem.page/sitemap-index.xml
