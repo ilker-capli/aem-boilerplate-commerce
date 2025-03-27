@@ -4,7 +4,7 @@ import { rootLink } from '../../scripts/scripts.js';
 
 export default async function decorate(block) {
   // eslint-disable-next-line import/no-absolute-path, import/no-unresolved
-  await import('/scripts/widgets/search.js');
+  await import('/scripts/widgets/search-mnm.js');
 
   const { category, urlpath, type } = readBlockConfig(block);
   block.textContent = '';
@@ -18,7 +18,7 @@ export default async function decorate(block) {
     storeCode: await getConfigValue('commerce.headers.cs.Magento-Store-Code'),
     storeViewCode: await getConfigValue('commerce.headers.cs.Magento-Store-View-Code'),
     config: {
-      pageSize: 8,
+      pageSize: 12,
       perPageConfig: {
         pageSizeOptions: '12,24,36',
         defaultPageSizeOption: '12',
@@ -70,5 +70,5 @@ export default async function decorate(block) {
     }, 200);
   });
 
-  return window.LiveSearchPLP({ storeDetails, root: block });
+  return window.LiveSearchPLP({ storeDetails, root: block, numberOfColumns: 3 });
 }

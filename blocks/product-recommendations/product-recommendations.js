@@ -66,7 +66,7 @@ function renderPlaceholder(block) {
 }
 
 function renderItem(unitId, product) {
-  let image = product.images ? product.images[0]?.url: undefined;
+  let image = product?.images?.[0]?.url;
   if (image) {
     image = image.replace('http://', '//');
   }
